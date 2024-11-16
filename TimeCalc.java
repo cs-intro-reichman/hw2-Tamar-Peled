@@ -10,19 +10,10 @@ public class TimeCalc {
 		int newHours= totalHours%24;
 		int newMinutes= totalMinutes-(totalHours*60);
 
-		if (newMinutes<10 && newHours<10 ) {
-			System.out.println("0" +newHours + ":0"+newMinutes);
-		}
-		else if (newHours<10){
-		System.out.println("0" +newHours + ":"+newMinutes);
-	}
-		else if (newMinutes<10){
-			System.out.println(newHours + "0:"+newMinutes);
-		}
+		String formatNewHours = (newHours<10 ? "0" + newHours : "" + newHours);
+		String formatNewMInutes = (newMinutes <10 ? "0" + newMinutes : "" + newMinutes);
 
-
-		else{
-			System.out.println(newHours + ":" + newMinutes);
-		}
+		
+		System.out.println(formatNewHours + ":" + formatNewMInutes);
     }
 }
