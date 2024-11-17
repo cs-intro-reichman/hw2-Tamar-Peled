@@ -22,7 +22,7 @@ public class Cheers {
                                 
                 }  
 
-                System.out.println("What does that spell? ");
+                System.out.println("What does that spell?");
 
                 for (int line = 0; line < numberOflines; line++){
                         
