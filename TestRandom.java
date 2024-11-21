@@ -31,10 +31,8 @@ public  class  TestRandom {
 				 ? (double) lessThenHalf/greaterOrEqualHalf : (double) greaterOrEqualHalf/lessThenHalf;
 		System.out.println("Ratio: " + "" +ratio);
 }
-	
 
-		
-		
+				
 }
 
 }
