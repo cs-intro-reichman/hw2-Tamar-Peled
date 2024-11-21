@@ -1,35 +1,45 @@
 // Demonstrates the Collatz conjecture.
 public class Collatz {
-	public static void main(String args[]) {
+	public static void main(String args[]){
 	    int n = Integer.parseInt(args[0]);
-		String mode = (args [1]);
-
-		
-
-		for(int seed =1; seed <= n; seed++){
-			 if (mode == "v"){
-				System.out.println("seed" + seed + ": ");
-			 }
+		String mode = args [1];
+		boolean isVerbose = mode.equals("v");
 
 
-		while (n != 1) {
-			if (n % 2 ==0){
-				n = n/2;
+		for(int seed = 1; seed <= n; seed++){
+			int currentSeed = seed;
+			String hailstoneSequence = "";
+			int steps = 0; 
+
+			if(isVerbose){
+				hailstoneSequence += seed;
 			}
 
-				else{
-					n = (n*3)+1;
+			while (currentSeed != 1){
+				if (currentSeed % 2 == 0){
+					currentSeed /= 2;
+				}else{
+					currentSeed = ( 3 * currentSeed ) + 1;
 				}
 
-				System.out.print(n+ " ");
-
-			
+				steps++;
+				if (isVerbose){
+					hailstoneSequence += " " + currentSeed;
+				}
+			}
+				if (isVerbose){
+					System.out.println( hailstoneSequence + "(" + ( steps + 1 ) + ")");
 
 			}
+		}
 
 
-				System.out.println("Every one of the first 7 hailstone sequences reched 1.");
+			System.out.println("Every one of the first " + n + " hailstone sequences reached 1.");
+
+
 
 		
 	}
-}
+	}
+
+
